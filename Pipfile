@@ -8,6 +8,7 @@ django = "*"
 psycopg2-binary = "*"
 django-tenants = "*"
 gunicorn = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 

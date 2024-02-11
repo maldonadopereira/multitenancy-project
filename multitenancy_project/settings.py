@@ -30,12 +30,15 @@ TENANT_APPS = [
 
 INSTALLED_APPS = [
                      'django_tenants',
+                     'corsheaders',
+
                  ] + SHARED_APPS + TENANT_APPS
 
 MIDDLEWARE = [
     'django_tenants.middleware.main.TenantMainMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -122,3 +125,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 TENANT_MODEL = "core.Tenant"
 TENANT_DOMAIN_MODEL = 'core.Domain'
+
+
+CORS_ALLOW_ALL_ORIGINS = True
